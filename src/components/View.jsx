@@ -3,19 +3,10 @@ import Navbar from './Navbar'
 import axios from 'axios'
 
 const View = () => {
-    const[data,changeData]=useState(
-        [
-            {
-        "name" : "Safa",
-        "rollno":"37",
-        "admnno":"FITMCA-101",
-        "college":"FISAT"
-            }
-        ]
-    )
+    const[data,changeData]=useState([])
 
     const fetchData= () => {
-        axios.get("").then((response)=>
+        axios.get("http://localhost:8080/view").then((response)=>
         {
             console.log(response.data)
             changeData(response.data)
